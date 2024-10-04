@@ -13,7 +13,7 @@ const corsOptions = {
 // Apply the CORS middleware with options
 app.use(cors(corsOptions));
 
-app.options('*', cors(corsOptions)); // Allow preflight requests for all routes
+// app.options('*', cors(corsOptions)); // Allow preflight requests for all routes
 
 // { origin: '*' }
 // app.use(cors(corsOptions));
