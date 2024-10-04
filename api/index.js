@@ -4,14 +4,14 @@ import config from "../src/config/config";
 import app from "../src/app";
 import cors from "cors";
 const corsOptions = {
-  origin: 'http://localhost:3000', // Replace with your frontend URL
+  // origin: 'http://localhost:3000', // Replace with your frontend URL
   methods: ['GET', 'POST'], // Specify allowed methods if needed
   allowedHeaders: ['Content-Type', 'Authorization'], // Include headers you need to allow
   credentials: true, // This allows credentials (cookies, authorization headers) to be sent
 };
 
 // Apply the CORS middleware with options
-app.use(cors(corsOptions));
+app.use(cors({ origin: '*' },corsOptions));
 
 // app.options('*', cors(corsOptions)); // Allow preflight requests for all routes
 
