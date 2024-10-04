@@ -10,8 +10,9 @@ const corsOptions = {
   credentials: true                  // Allow credentials if needed
 };
 
+// { origin: '*' }
 // app.use(cors(corsOptions));
-app.use(cors({ origin: '*' }));
+app.use(cors());
 
 app.listen(config.port, (err) => {
   if (err) console.log(err);
