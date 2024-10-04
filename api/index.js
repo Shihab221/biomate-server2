@@ -3,17 +3,16 @@ import mongoose from "mongoose";
 import config from "../src/config/config";
 import app from "../src/app";
 import cors from "cors";
-// const corsOptions = {
-//   // origin: 'http://localhost:3000', // Replace with your frontend URL
-//   methods: ['GET', 'POST'], // Specify allowed methods if needed
-//   allowedHeaders: ['Content-Type', 'Authorization'], // Include headers you need to allow
-//   credentials: true, // This allows credentials (cookies, authorization headers) to be sent
-// };
+
+const corsOptions = {
+  origin: 'https://your-frontend-domain.com', // Replace with your actual frontend domain
+  methods: ['GET', 'POST', 'PUT', 'DELETE'], // List the HTTP methods you want to allow
+  credentials: true, // This allows cookies to be sent
+  allowedHeaders: ['Content-Type', 'Authorization', 'Accept'], // Specify the headers allowed
+};
 
 // Apply the CORS middleware with options
-app.use(cors({ origin: '*' }));
-
-
+app.use(cors(corsOptions));
 
 app.listen(config.port, (err) => {
   if (err) console.log(err);
