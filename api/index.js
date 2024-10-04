@@ -14,6 +14,17 @@ const corsOptions = {
 // Apply the CORS middleware with options
 app.use(cors(corsOptions));
 
+app.use((req, res, next) => {
+  res.cookie('cookieName', 'cookieValue', { 
+    sameSite: 'None', 
+    secure: true 
+  });
+  next();
+});
+
+app.options('*', cors(corsOptions)); // This enables handling preflight requests
+
+
 app.listen(config.port, (err) => {
   if (err) console.log(err);
   console.log(`Server started at port ${config.port}`);
