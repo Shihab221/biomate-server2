@@ -7,9 +7,9 @@ import cors from "cors";
 
 const corsOptions = {
   origin: 'http://localhost:3002', // Replace with your actual frontend domain
-  // methods: ['GET', 'POST', 'PUT', 'DELETE'], // List the HTTP methods you want to allow
-  // credentials: true, // This allows cookies to be sent
-  // allowedHeaders: ['Content-Type', 'Authorization', 'Accept'], // Specify the headers allowed
+  methods: ['GET', 'POST', 'PUT', 'DELETE'], // List the HTTP methods you want to allow
+  credentials: true, // This allows cookies to be sent
+  allowedHeaders: ['Content-Type', 'Authorization', 'Accept'], // Specify the headers allowed
 };
 
 // Apply the CORS middleware with options
